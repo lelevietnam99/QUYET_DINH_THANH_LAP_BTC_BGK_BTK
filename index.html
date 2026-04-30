@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tải về Tài liệu</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --hover-color: #1a252f;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .header p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .file-card {
+            background: var(--card-bg);
+            border: 1px solid #e0e6ed;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+
+        .file-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .file-name {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            min-height: 50px; /* Giúp các thẻ đều nhau dù tên ngắn hay dài */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--hover-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Danh sách Tài liệu</h1>
+        <p>Vui lòng chọn tài liệu bạn cần để tải xuống.</p>
+    </div>
+
+    <div class="file-grid">
+        <!-- Quyết định thi thăng đai -->
+        <div class="file-card">
+            <div class="file-icon">📄</div>
+            <div class="file-name">Quyết định thi thăng đai</div>
+            <!-- Thay tên file thực tế vào phần href nếu cần -->
+            <a href="quyet-dinh-thi-thang-dai.pdf" download class="download-btn">Tải xuống</a>
+        </div>
+
+        <!-- Phiếu dự thi -->
+        <div class="file-card">
+            <div class="file-icon">📝</div>
+            <div class="file-name">Phiếu dự thi</div>
+            <a href="phieu-du-thi.docx" download class="download-btn">Tải xuống</a>
+        </div>
+
+        <!-- File abc.docx -->
+        <div class="file-card">
+            <div class="file-icon">📘</div>
+            <div class="file-name">abc.docx</div>
+            <a href="abc.docx" download class="download-btn">Tải xuống DOCX</a>
+        </div>
+
+        <!-- File def.pdf -->
+        <div class="file-card">
+            <div class="file-icon">📕</div>
+            <div class="file-name">def.pdf</div>
+            <a href="def.pdf" download class="download-btn">Tải xuống PDF</a>
+        </div>
+    </div>
+
+</body>
+</html>
